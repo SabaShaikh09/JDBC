@@ -1,0 +1,21 @@
+package com.neosoft;
+
+import com.controller.StudentController;
+
+public class StudentMainApp {
+
+	public static void main(String[] args) throws Exception {
+		// TODO Auto-generated method stub
+		//Get Student name and marks
+				StudentController.getAllStudent().stream().forEach(
+						student -> System.out.println(student.getStdName() +" : "+ student.getMarks()));
+				
+				System.out.println("---------------------------");
+				
+				StudentController.getAllStudent().stream().filter(st -> st.getMarks() >= 80 ).forEach(st -> System.out.println(st.getStdName()+" : "+st.getMarks()));
+
+	}
+
+}
+
+
